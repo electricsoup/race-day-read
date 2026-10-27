@@ -93,12 +93,18 @@ struct IdeasView: View {
                         .buttonStyle(.bordered)
                     }
                     .font(.subheadline)
-                    HStack(spacing: 4) {
-                        if feed.isRefreshing { ProgressView().controlSize(.mini) }
+                    HStack(spacing: 6) {
                         Text(feed.feed.updated.isEmpty ? "Ideas built in" : "Ideas updated \(DayKey.format(feed.feed.updated, "MMM d"))")
-                        Button("Check for new") { Task { await feed.refresh() } }.buttonStyle(.borderless)
+                            .foregroundStyle(.secondary)
+                        Spacer(minLength: 8)
+                        if feed.isRefreshing { ProgressView().controlSize(.mini) }
+                        Button { Task { await feed.refresh() } } label: {
+                            Label("Refresh", systemImage: "arrow.clockwise").lineLimit(1).fixedSize()
+                        }
+                        .buttonStyle(.borderless)
+                        .disabled(feed.isRefreshing)
                     }
-                    .font(.caption).foregroundStyle(.secondary)
+                    .font(.caption)
                     if let note = feed.feed.note { Text(note).font(.caption).foregroundStyle(.secondary) }
                 }
             }
