@@ -304,3 +304,18 @@ struct ToastOverlay: View {
         .animation(.spring(duration: 0.3), value: center.current?.id)
     }
 }
+
+/// Icon + title that never wraps or drops its title (a plain Label can collapse to icon-only in tight rows).
+struct IconText: View {
+    let title: String
+    let icon: String
+    init(_ title: String, _ icon: String) { self.title = title; self.icon = icon }
+    var body: some View {
+        HStack(spacing: 5) {
+            Image(systemName: icon)
+            Text(title)
+        }
+        .lineLimit(1)
+        .fixedSize(horizontal: true, vertical: false)
+    }
+}

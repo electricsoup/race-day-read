@@ -72,11 +72,11 @@ struct PackView: View {
                     Text(progressLabel(shown: shown, packed: packedCount)).font(.caption).foregroundStyle(.secondary).monospacedDigit()
                     HStack(spacing: 10) {
                         filterMenu
-                        Button { showSuggestions = true } label: { Label("Suggest", systemImage: "sparkles").lineLimit(1).fixedSize() }
+                        Button { showSuggestions = true } label: { IconText("Suggest", "sparkles") }
                             .buttonStyle(.bordered)
                         Spacer(minLength: 0)
                         if canEdit {
-                            Button { adding = ItemDraft(who: defaultWho) } label: { Label("Add", systemImage: "plus").lineLimit(1).fixedSize() }
+                            Button { adding = ItemDraft(who: defaultWho) } label: { IconText("Add", "plus").bold() }
                                 .buttonStyle(.borderedProminent)
                         }
                     }
@@ -200,8 +200,7 @@ struct PackView: View {
                 Button("Clear filters") { whoFilter = "all"; bagFilter = "all"; hidePacked = false; search = "" }
             }
         } label: {
-            Label(anyFilter ? "Filters on" : "Filters", systemImage: anyFilter ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
-                .lineLimit(1).fixedSize()
+            IconText(anyFilter ? "Filters on" : "Filters", anyFilter ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
         }
         .buttonStyle(.bordered)
     }

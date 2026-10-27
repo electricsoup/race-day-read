@@ -99,7 +99,7 @@ struct IdeasView: View {
                         Spacer(minLength: 8)
                         if feed.isRefreshing { ProgressView().controlSize(.mini) }
                         Button { Task { await feed.refresh() } } label: {
-                            Label("Refresh", systemImage: "arrow.clockwise").lineLimit(1).fixedSize()
+                            IconText("Refresh", "arrow.clockwise")
                         }
                         .buttonStyle(.borderless)
                         .disabled(feed.isRefreshing)
