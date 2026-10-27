@@ -80,6 +80,9 @@ final class StoreManager: ObservableObject {
     }
 
     func refreshEntitlements() async {
+        #if DEBUG
+        if CommandLine.arguments.contains("-demoPro") { isPro = true; return }
+        #endif
         var owned = false
         for await result in Transaction.currentEntitlements {
             if let t = try? checkVerified(result), t.productID == ProductID.pro, t.revocationDate == nil {

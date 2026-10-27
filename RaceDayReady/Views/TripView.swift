@@ -23,6 +23,13 @@ struct TripView: View {
     init(trip: Trip) {
         self.trip = trip
         _meKey = AppStorage(wrappedValue: "", "me." + trip.idString)
+        #if DEBUG
+        let args = CommandLine.arguments
+        if let i = args.firstIndex(of: "-tab"), i + 1 < args.count {
+            let start: [String: TripTab] = ["pack": .pack, "outfits": .outfits, "prep": .prep, "content": .content]
+            _tab = State(initialValue: start[args[i + 1]] ?? .pack)
+        }
+        #endif
     }
 
     private var palette: Palette { Palette.forTheme(trip.theme) }

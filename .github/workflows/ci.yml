@@ -32,6 +32,26 @@ jobs:
             -configuration Debug \
             CODE_SIGNING_ALLOWED=NO 2>&1 | tee build.log
 
+      - name: Launch in the simulator and take screenshots
+        id: run
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/report/shots
+          DEVICE=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k,v in sorted(d.items(), reverse=True) if 'iOS' in k for x in v if x['name'].startswith('iPhone 16')))")
+          xcrun simctl boot "$DEVICE"
+          xcrun simctl bootstatus "$DEVICE" -b
+          xcrun simctl status_bar "$DEVICE" override --time 9:41 --batteryLevel 100 --cellularBars 4 || true
+          APP=$(find ~/Library/Developer/Xcode/DerivedData -path "*Debug-iphonesimulator/RaceDayReady.app" -maxdepth 6 | head -1)
+          xcrun simctl install "$DEVICE" "$APP"
+          for tab in pack outfits prep content; do
+            xcrun simctl launch --terminate-running-process "$DEVICE" com.electricsoup.racedayready -demoTrip -demoPro -tab "$tab"
+            sleep 10
+            xcrun simctl io "$DEVICE" screenshot "/tmp/report/shots/$tab.png"
+          done
+          xcrun simctl spawn "$DEVICE" log show --last 3m --style compact --predicate 'process == "RaceDayReady"' > /tmp/report/app-log.txt 2>&1 || true
+          ls ~/Library/Logs/DiagnosticReports/ 2>/dev/null | grep -i racedayready > /tmp/report/crashes.txt || true
+
       # Saves a short report to the ci-results branch so the result can be read without opening GitHub.
       - name: Publish build report
         if: always() && github.event_name != 'pull_request'
@@ -40,6 +60,7 @@ jobs:
           {
             echo "commit: $GITHUB_SHA"
             echo "status: ${{ steps.build.outcome }}"
+            echo "simulator run: ${{ steps.run.outcome }}"
             xcodebuild -version
             echo "---- errors ----"
             grep -E ": error: |error: " build.log | sort -u | head -150 || true
@@ -51,6 +72,6 @@ jobs:
           git config user.name "ci"
           git config user.email "ci@users.noreply.github.com"
           git checkout -q -b ci-results
-          git add result.txt
+          git add -A
           git commit -qm "Build report for $GITHUB_SHA"
           git push -fq "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ci-results
