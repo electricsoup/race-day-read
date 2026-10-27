@@ -44,13 +44,34 @@ jobs:
           xcrun simctl status_bar "$DEVICE" override --time 9:41 --batteryLevel 100 --cellularBars 4 || true
           APP=$(find ~/Library/Developer/Xcode/DerivedData -path "*Debug-iphonesimulator/RaceDayReady.app" -maxdepth 6 | head -1)
           xcrun simctl install "$DEVICE" "$APP"
+          xcrun simctl launch "$DEVICE" com.electricsoup.racedayready
+          sleep 8
+          xcrun simctl io "$DEVICE" screenshot "/tmp/report/shots/first-launch.png"
           for tab in pack outfits prep content; do
             xcrun simctl launch --terminate-running-process "$DEVICE" com.electricsoup.racedayready -demoTrip -demoPro -tab "$tab"
             sleep 10
             xcrun simctl io "$DEVICE" screenshot "/tmp/report/shots/$tab.png"
           done
           xcrun simctl spawn "$DEVICE" log show --last 3m --style compact --predicate 'process == "RaceDayReady"' > /tmp/report/app-log.txt 2>&1 || true
-          ls ~/Library/Logs/DiagnosticReports/ 2>/dev/null | grep -i racedayready > /tmp/report/crashes.txt || true
+          for f in ~/Library/Logs/DiagnosticReports/RaceDayReady*.ips; do
+            [ -e "$f" ] || continue
+            echo "==== $f" >> /tmp/report/crashes.txt
+            python3 - "$f" >> /tmp/report/crashes.txt 2>&1 <<'PY' || true
+          import json, sys
+          text = open(sys.argv[1]).read()
+          body = json.loads(text.split("\n", 1)[1])
+          print("exception:", body.get("exception"))
+          print("termination:", body.get("termination"))
+          print("asi:", body.get("asi"))
+          images = body.get("usedImages", [])
+          for th in body.get("threads", []):
+              if th.get("triggered"):
+                  for fr in th.get("frames", [])[:25]:
+                      img = images[fr["imageIndex"]].get("name", "?") if fr.get("imageIndex") is not None and fr["imageIndex"] < len(images) else "?"
+                      print(" ", img, fr.get("symbol", ""), fr.get("sourceFile", ""), fr.get("sourceLine", ""))
+          PY
+          done
+          touch /tmp/report/crashes.txt
 
       # Saves a short report to the ci-results branch so the result can be read without opening GitHub.
       - name: Publish build report

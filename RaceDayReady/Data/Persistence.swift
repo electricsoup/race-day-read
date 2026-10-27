@@ -37,7 +37,7 @@ final class Persistence {
             desc.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
             desc.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         }
-        if !inMemory {
+        if !inMemory && Self.hasCloudKitEntitlement {
             let privateOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: Self.cloudContainerID)
             privateOptions.databaseScope = .private
             privateDesc.cloudKitContainerOptions = privateOptions
@@ -73,6 +73,17 @@ final class Persistence {
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.viewContext.transactionAuthor = "app"
     }
+
+    /// True when the app was signed with the iCloud (CloudKit) capability. Without it, CloudKit ends the
+    /// app at launch, so unsigned builds (CI, or Xcode before a Team is picked) keep data on the device only.
+    /// The entitlements are embedded in the signed executable; the key is assembled here so the search
+    /// doesn't just find this line's own text.
+    static let hasCloudKitEntitlement: Bool = {
+        guard let url = Bundle.main.executableURL,
+              let data = try? Data(contentsOf: url, options: .alwaysMapped) else { return false }
+        let key = ["<key>com", "apple", "developer", "icloud-services</key>"].joined(separator: ".")
+        return data.range(of: Data(key.utf8)) != nil
+    }()
 
     // MARK: - Saving
 

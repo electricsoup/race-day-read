@@ -6,7 +6,8 @@ A packing list, outfit planner and pre-trip to-do list for race weekends, shared
 
 1. Use **Xcode 16.4** (the version that runs on your 2019 MacBook Pro with macOS Sequoia).
 2. Double-click **`RaceDayReady.xcodeproj`**.
-3. Pick an iPhone simulator in the toolbar and press **⌘R**.
+3. Click the blue **RaceDayReady** project icon → **RaceDayReady** target → **Signing & Capabilities** → choose your **Team** (the same one you use for Settle It). Xcode needs it because the app uses iCloud.
+4. Pick an iPhone simulator in the toolbar and press **⌘R**.
 
 That's it for a first look. In the simulator:
 - Pro can be "bought" with fake money. The Run scheme uses `RaceDayReady/Resources/Products.storekit`.
