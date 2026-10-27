@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+._*
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# CocoaPods (prefer SPM)
+Pods/
+
+# Secrets — NEVER commit these
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+.env
+secrets.xcconfig
+AuthKey_*.p8
+
+# Misc
+*.log
+
+# Tools
+__pycache__/

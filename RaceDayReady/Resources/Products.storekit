@@ -1,0 +1,32 @@
+{
+  "identifier" : "RACEDAYREADY_STOREKIT_CONFIG",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : true,
+      "internalID" : "racedayreadypro01",
+      "localizations" : [
+        {
+          "description" : "Trend-based content ideas and daily shot lists matched to your outfits, with calendar export.",
+          "displayName" : "Race Day Ready Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.electricsoup.racedayready.pro",
+      "referenceName" : "Race Day Ready Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "0",
+    "_developerTeamID" : "",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : { "major" : 3, "minor" : 0 }
+}

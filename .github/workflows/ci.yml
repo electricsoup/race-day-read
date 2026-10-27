@@ -1,0 +1,56 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build (iOS Simulator)
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build for simulator
+        id: build
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project RaceDayReady.xcodeproj \
+            -scheme RaceDayReady \
+            -destination "generic/platform=iOS Simulator" \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee build.log
+
+      # Saves a short report to the ci-results branch so the result can be read without opening GitHub.
+      - name: Publish build report
+        if: always() && github.event_name != 'pull_request'
+        run: |
+          mkdir -p /tmp/report
+          {
+            echo "commit: $GITHUB_SHA"
+            echo "status: ${{ steps.build.outcome }}"
+            xcodebuild -version
+            echo "---- errors ----"
+            grep -E ": error: |error: " build.log | sort -u | head -150 || true
+            echo "---- last lines ----"
+            tail -40 build.log
+          } > /tmp/report/result.txt
+          cd /tmp/report
+          git init -q
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git checkout -q -b ci-results
+          git add result.txt
+          git commit -qm "Build report for $GITHUB_SHA"
+          git push -fq "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ci-results

@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3896CF881080C88D7C010079 /* RaceDayReadyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE2F51F491C50850796B484 /* RaceDayReadyApp.swift */; };
+		2AF644AE83647AB175FE606C /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B709C3D6E169DCC54D6DC6 /* Catalog.swift */; };
+		810DEC0603F76FCF3C4AC1DD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D037535A7653D8D96E793D /* Helpers.swift */; };
+		5205C0867AAE0401E82A468D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B843E2D2200271078DCDE09 /* Model.swift */; };
+		036F2ABA83D74CA065A3D454 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B9F0D750D91825C685D4D1 /* Persistence.swift */; };
+		EDA4027B309607C5CAE02565 /* Starters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B6EA2E7005FF4BD5A755F1 /* Starters.swift */; };
+		85FA53B3A6BD320E47B8F460 /* ICSExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F02D7FD792429A739FBFDF /* ICSExporter.swift */; };
+		0E03D7798AFAEB618D746D90 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DA29FBE9EE6F9EF531A91 /* Importer.swift */; };
+		1F1DC2D544105D3F5165CEBE /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BBF64FC260AE156A32017 /* Sharing.swift */; };
+		10D3787BFA08BD8DA119642E /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D09833ACE35A6A8FD3AAAF2 /* StoreManager.swift */; };
+		A4F7F3D866AB698F096DCFE7 /* ContentHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA1596841207BEC12510421 /* ContentHubView.swift */; };
+		DC17BF7711F4DF784E70D8D5 /* ItemEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B24CFCA3BFB980000BF6B /* ItemEditor.swift */; };
+		B1D7B7F5DFE3789C14712651 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9E590DF1725F5E0B05A1D /* NewTripView.swift */; };
+		519BB9682C7DC664C19A601D /* OutfitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FD8D6F12C2D1C9F14421D /* OutfitEditor.swift */; };
+		7D3A164A087219F31266375C /* OutfitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291227A2547EA8F7BFE344FB /* OutfitsView.swift */; };
+		3ED7261296EB45131953C7F6 /* PackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AED54F3E2779B4BADBBC3 /* PackView.swift */; };
+		23A7B923AE549BABDCDB476A /* PrepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9643A9467D8E3199E3C2740 /* PrepView.swift */; };
+		0D7A06D17D1D5E65E712F178 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35A9F0C87C9EC772E845A0 /* SettingsView.swift */; };
+		9B6A84436787BF731963C780 /* SuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D321B3166E18C8E24588DB1 /* SuggestionsView.swift */; };
+		F7CE9283A5594A5EDB64DD78 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CF6A5B2AF4A288AADA972 /* Theme.swift */; };
+		5C7AFE0797FAF186077A38E6 /* TripSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0FBD1D93A8021A2D668073 /* TripSettingsView.swift */; };
+		73B4E23B2C4AAFB0FF81F6E8 /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DA22C87CD57C71A69424E0 /* TripView.swift */; };
+		8DC007E1EA436FAEFE0F3182 /* TripsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE283DDD99C17B688B2091A0 /* TripsListView.swift */; };
+		FF9266EC3F6E07E0D88617AC /* UpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80DD85A04BB3EC7439BBD42 /* UpgradeView.swift */; };
+		1BB8E4A8EF14595F39E91CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7C6C251336CA1D1EEE33A7C /* Assets.xcassets */; };
+		D3954BCD68C731E7BEE32F38 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EB1B8B820FD6FDD2409D85F /* feed.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7DE2F51F491C50850796B484 /* RaceDayReadyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDayReadyApp.swift; sourceTree = "<group>"; };
+		67B709C3D6E169DCC54D6DC6 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		D2D037535A7653D8D96E793D /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		9B843E2D2200271078DCDE09 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F5B9F0D750D91825C685D4D1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		34B6EA2E7005FF4BD5A755F1 /* Starters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starters.swift; sourceTree = "<group>"; };
+		F1F02D7FD792429A739FBFDF /* ICSExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICSExporter.swift; sourceTree = "<group>"; };
+		741DA29FBE9EE6F9EF531A91 /* Importer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
+		BE5BBF64FC260AE156A32017 /* Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
+		7D09833ACE35A6A8FD3AAAF2 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		0EA1596841207BEC12510421 /* ContentHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHubView.swift; sourceTree = "<group>"; };
+		DD4B24CFCA3BFB980000BF6B /* ItemEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditor.swift; sourceTree = "<group>"; };
+		AAC9E590DF1725F5E0B05A1D /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
+		F19FD8D6F12C2D1C9F14421D /* OutfitEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitEditor.swift; sourceTree = "<group>"; };
+		291227A2547EA8F7BFE344FB /* OutfitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsView.swift; sourceTree = "<group>"; };
+		E58AED54F3E2779B4BADBBC3 /* PackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackView.swift; sourceTree = "<group>"; };
+		C9643A9467D8E3199E3C2740 /* PrepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepView.swift; sourceTree = "<group>"; };
+		6C35A9F0C87C9EC772E845A0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5D321B3166E18C8E24588DB1 /* SuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsView.swift; sourceTree = "<group>"; };
+		145CF6A5B2AF4A288AADA972 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2A0FBD1D93A8021A2D668073 /* TripSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSettingsView.swift; sourceTree = "<group>"; };
+		A3DA22C87CD57C71A69424E0 /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
+		FE283DDD99C17B688B2091A0 /* TripsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListView.swift; sourceTree = "<group>"; };
+		F80DD85A04BB3EC7439BBD42 /* UpgradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeView.swift; sourceTree = "<group>"; };
+		D7C6C251336CA1D1EEE33A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EB1B8B820FD6FDD2409D85F /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
+		7B317B44935B5652E9A0EA11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FB2BC47EFB87777EF55DE31 /* RaceDayReady.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RaceDayReady.entitlements; sourceTree = "<group>"; };
+		05FA6AA2980C8409B973037B /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		463342D84A60452EE959899F /* RaceDayReady.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaceDayReady.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7159AF8A813CA4ECA6762196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22885DB3624502177BFB85DB = {
+			isa = PBXGroup;
+			children = (
+				17BF5FC633EEEC9C96D15F20 /* RaceDayReady */,
+				61F82C69241D7FC0176FC965 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		61F82C69241D7FC0176FC965 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				463342D84A60452EE959899F /* RaceDayReady.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17BF5FC633EEEC9C96D15F20 /* RaceDayReady */ = {
+			isa = PBXGroup;
+			children = (
+				22EE43E5F9A80405E6DFEACD /* App */,
+				D7C6C251336CA1D1EEE33A7C /* Assets.xcassets */,
+				EC2555ED2774F53D5258C0E5 /* Data */,
+				D7836E24B5D1D972A77E37FB /* Resources */,
+				254F45A960FD7BBEFB5A69EA /* Services */,
+				3CFFCE6CA245ADF5FC27600D /* Views */,
+				7B317B44935B5652E9A0EA11 /* Info.plist */,
+				0FB2BC47EFB87777EF55DE31 /* RaceDayReady.entitlements */,
+			);
+			path = RaceDayReady;
+			sourceTree = "<group>";
+		};
+		22EE43E5F9A80405E6DFEACD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7DE2F51F491C50850796B484 /* RaceDayReadyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EC2555ED2774F53D5258C0E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				67B709C3D6E169DCC54D6DC6 /* Catalog.swift */,
+				D2D037535A7653D8D96E793D /* Helpers.swift */,
+				9B843E2D2200271078DCDE09 /* Model.swift */,
+				F5B9F0D750D91825C685D4D1 /* Persistence.swift */,
+				34B6EA2E7005FF4BD5A755F1 /* Starters.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D7836E24B5D1D972A77E37FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05FA6AA2980C8409B973037B /* Products.storekit */,
+				1EB1B8B820FD6FDD2409D85F /* feed.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		254F45A960FD7BBEFB5A69EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F1F02D7FD792429A739FBFDF /* ICSExporter.swift */,
+				741DA29FBE9EE6F9EF531A91 /* Importer.swift */,
+				BE5BBF64FC260AE156A32017 /* Sharing.swift */,
+				7D09833ACE35A6A8FD3AAAF2 /* StoreManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3CFFCE6CA245ADF5FC27600D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EA1596841207BEC12510421 /* ContentHubView.swift */,
+				DD4B24CFCA3BFB980000BF6B /* ItemEditor.swift */,
+				AAC9E590DF1725F5E0B05A1D /* NewTripView.swift */,
+				F19FD8D6F12C2D1C9F14421D /* OutfitEditor.swift */,
+				291227A2547EA8F7BFE344FB /* OutfitsView.swift */,
+				E58AED54F3E2779B4BADBBC3 /* PackView.swift */,
+				C9643A9467D8E3199E3C2740 /* PrepView.swift */,
+				6C35A9F0C87C9EC772E845A0 /* SettingsView.swift */,
+				5D321B3166E18C8E24588DB1 /* SuggestionsView.swift */,
+				145CF6A5B2AF4A288AADA972 /* Theme.swift */,
+				2A0FBD1D93A8021A2D668073 /* TripSettingsView.swift */,
+				A3DA22C87CD57C71A69424E0 /* TripView.swift */,
+				FE283DDD99C17B688B2091A0 /* TripsListView.swift */,
+				F80DD85A04BB3EC7439BBD42 /* UpgradeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9AA0F4906EC70136C353677 /* RaceDayReady */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADF42F5229E546C4B152F21B /* Build configuration list for PBXNativeTarget "RaceDayReady" */;
+			buildPhases = (
+				C4F2B193B22BB35D95515CAA /* Sources */,
+				7159AF8A813CA4ECA6762196 /* Frameworks */,
+				17A25616BE48F042BA9F36C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaceDayReady;
+			productName = RaceDayReady;
+			productReference = 463342D84A60452EE959899F /* RaceDayReady.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		61CCC2B62DA58E8178F00FD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					F9AA0F4906EC70136C353677 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 247B471AB178D65BCA8BD59F /* Build configuration list for PBXProject "RaceDayReady" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22885DB3624502177BFB85DB;
+			productRefGroup = 61F82C69241D7FC0176FC965 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9AA0F4906EC70136C353677 /* RaceDayReady */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17A25616BE48F042BA9F36C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BB8E4A8EF14595F39E91CE8 /* Assets.xcassets in Resources */,
+				D3954BCD68C731E7BEE32F38 /* feed.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4F2B193B22BB35D95515CAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3896CF881080C88D7C010079 /* RaceDayReadyApp.swift in Sources */,
+				2AF644AE83647AB175FE606C /* Catalog.swift in Sources */,
+				810DEC0603F76FCF3C4AC1DD /* Helpers.swift in Sources */,
+				5205C0867AAE0401E82A468D /* Model.swift in Sources */,
+				036F2ABA83D74CA065A3D454 /* Persistence.swift in Sources */,
+				EDA4027B309607C5CAE02565 /* Starters.swift in Sources */,
+				85FA53B3A6BD320E47B8F460 /* ICSExporter.swift in Sources */,
+				0E03D7798AFAEB618D746D90 /* Importer.swift in Sources */,
+				1F1DC2D544105D3F5165CEBE /* Sharing.swift in Sources */,
+				10D3787BFA08BD8DA119642E /* StoreManager.swift in Sources */,
+				A4F7F3D866AB698F096DCFE7 /* ContentHubView.swift in Sources */,
+				DC17BF7711F4DF784E70D8D5 /* ItemEditor.swift in Sources */,
+				B1D7B7F5DFE3789C14712651 /* NewTripView.swift in Sources */,
+				519BB9682C7DC664C19A601D /* OutfitEditor.swift in Sources */,
+				7D3A164A087219F31266375C /* OutfitsView.swift in Sources */,
+				3ED7261296EB45131953C7F6 /* PackView.swift in Sources */,
+				23A7B923AE549BABDCDB476A /* PrepView.swift in Sources */,
+				0D7A06D17D1D5E65E712F178 /* SettingsView.swift in Sources */,
+				9B6A84436787BF731963C780 /* SuggestionsView.swift in Sources */,
+				F7CE9283A5594A5EDB64DD78 /* Theme.swift in Sources */,
+				5C7AFE0797FAF186077A38E6 /* TripSettingsView.swift in Sources */,
+				73B4E23B2C4AAFB0FF81F6E8 /* TripView.swift in Sources */,
+				8DC007E1EA436FAEFE0F3182 /* TripsListView.swift in Sources */,
+				FF9266EC3F6E07E0D88617AC /* UpgradeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3BA51885B4CBE95890E7BE5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6AF37B890C6D503B1E48D1EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1FCF8BD646C07AB35EF8C175 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RaceDayReady/RaceDayReady.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RaceDayReady/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Race Day Ready";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.electricsoup.racedayready;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50A7D9A497E44CD777069120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RaceDayReady/RaceDayReady.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RaceDayReady/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Race Day Ready";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.electricsoup.racedayready;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		247B471AB178D65BCA8BD59F /* Build configuration list for PBXProject "RaceDayReady" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA51885B4CBE95890E7BE5D /* Debug */,
+				6AF37B890C6D503B1E48D1EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADF42F5229E546C4B152F21B /* Build configuration list for PBXNativeTarget "RaceDayReady" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FCF8BD646C07AB35EF8C175 /* Debug */,
+				50A7D9A497E44CD777069120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 61CCC2B62DA58E8178F00FD9 /* Project object */;
+}
